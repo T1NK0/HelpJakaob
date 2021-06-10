@@ -24,7 +24,7 @@ namespace HelpJakaob
             this.body = body;
             this.subject = subject;
             this.cc = cc;
-            this.isHtml = isHtml
+            this.isHtml = isHtml;
         }
 
         public string To { get => to; set => to = value; }
@@ -32,8 +32,9 @@ namespace HelpJakaob
         public string Body { get => body; set => body = value; }
         public string Subject { get => subject; set => subject = value; }
         public string Cc { get => cc; set => cc = value; }
-        public bool IsHTML{
+        public bool IsHTML {
             get { return isHtml; }
             set { isHtml = value; }
         }
     }
+}

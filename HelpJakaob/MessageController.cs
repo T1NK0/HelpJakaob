@@ -9,25 +9,14 @@ namespace HelpJakaob
     /// </summary>
     class MessageController
     {
-        //Define messageType (SMTP/VMessage)
-
-        //Define Who will get message (All or one)
-
         /// <summary>
         /// Runs a SendMessage method, which returns the message as either SMTP or VMessage
         /// </summary>
-        public void SendMessage()
-        {
-            switch (Message.MessageCarrier)
-            {
-                case MessageCarrier.Smtp:
-                    return SendSMTPMessage;
-                case MessageCarrier.VMessage:
-                    return SendVMessage;
-                break;
-            }
 
-            //Also converts the message to html if it's selected.
-        }
+        //Message message = new Message();
+        //public void SendMessage()
+        //{
+
+        //}
     }
 }

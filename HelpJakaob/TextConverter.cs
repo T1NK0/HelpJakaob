@@ -7,8 +7,17 @@ namespace HelpJakaob
     /// <summary>
     /// Converts the message to HTML
     /// </summary>
-    public interface ITextConverter
+    class TextConverter
     {
-        public virtual string ConvertBodyToHTML(string plainText);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="plainText">returns the </param>
+        /// <returns>Returns the text as plaintext (html)</returns>
+        public string ConvertBodyToHTML(string plainText)
+        {
+            return "" + plainText + "";
+        }
     }
 }
