@@ -6,5 +6,6 @@ namespace HelpJakaob
 {
     class MessageCarrier
     {
+
     }
 }

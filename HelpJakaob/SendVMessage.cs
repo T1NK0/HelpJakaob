@@ -4,41 +4,33 @@ using System.Text;
 
 namespace HelpJakaob
 {
-    class SendVMessage
+    /// <summary>
+    /// Sends a message as VMessage, since it only access this class if it is a VMessage type (from ISendMessage)
+    /// </summary>
+    class SendVMessage : ISendMessage, ITextConverter
     {
-
-        public void sendVMessage(MessageCarrier type, string[] to, Message m, bool isHTML)
+        public void SendMessage(MessageCarrier type, Message m, bool isHTML)
         {
-            if (type.Equals(MessageCarrier.Smtp))
-            {
-                if (isHTML)
-                    m.Body = ConvertBodyToHTML(m.Body);
-                //her implementeres alt koden til at sende via Smtp
-            }
-
-            if (type.Equals(MessageCarrier.VMessage))
-            {
-                if (isHTML)
-                    m.Body = ConvertBodyToHTML(m.Body);
-                //her implementeres alt koden til at sende via VMessage
-            }
+            if (isHTML)
+                m.Body = ConvertBodyToHTML(m.Body);
+            //her implementeres alt koden til at sende via VMessage
         }
 
-        //public void sendMessageToAll(MessageCarrier type, string[] to, Message m, bool isHTML)
-        //{
-        //    if (type.Equals(MessageCarrier.Smtp))
-        //    {
-        //        if (isHTML)
-        //            m.Body = ConvertBodyToHTML(m.Body);
-        //        //her implementeres alt koden til at sende via Smtp
-        //    }
+        public void SendMessageToAll(MessageCarrier type, string[] to, Message m, bool isHTML)
+        {
+            if (isHTML)
+                m.Body = ConvertBodyToHTML(m.Body);
+            //her implementeres alt koden til at sende via VMessage
+        }
 
-        //    if (type.Equals(MessageCarrier.VMessage))
-        //    {
-        //        if (isHTML)
-        //            m.Body = ConvertBodyToHTML(m.Body);
-        //        //her implementeres alt koden til at sende via VMessage
-        //    }
-        //}
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="plainText"></param>
+        /// <returns></returns>
+        public override string ConvertBodyToHTML(string plainText)
+        {
+            return "" + plainText + "";
+        }
     }
 }

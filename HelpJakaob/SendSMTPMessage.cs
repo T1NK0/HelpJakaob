@@ -4,42 +4,23 @@ using System.Text;
 
 namespace HelpJakaob
 {
-    class SendSMTPMessage
+    /// <summary>
+    /// Sends a message as VMessage, since it only access this class if it is a SMTP type (from ISendMessage)
+    /// </summary>
+    class SendSMTPMessage : ISendMessage
     {
-        public void sendSMTPMessage(MessageCarrier type, Message m, bool isHTML)
+        public void SendMessage(MessageCarrier type, Message m, bool isHTML)
         {
-            //herinde sendes der en email ud til modtageren
-            if (type.Equals(MessageCarrier.Smtp))
-            {
-                if (isHTML)
-                    m.Body = ConvertBodyToHTML(m.Body);
-                //her implementeres alt koden til at sende via Smtp
-            }
-
-            if (type.Equals(MessageCarrier.VMessage))
-            {
-                if (isHTML)
-                    m.Body = ConvertBodyToHTML(m.Body);
-                //her implementeres alt koden til at sende via VMessage
-            }
+            if (isHTML)
+                m.Body = ConvertBodyToHTML(m.Body);
+            //her implementeres alt koden til at sende via Smtp
         }
 
-        //public void sendMessage(MessageCarrier type, Message m, bool isHTML)
-        //{
-        //    //herinde sendes der en email ud til modtageren
-        //    if (type.Equals(MessageCarrier.Smtp))
-        //    {
-        //        if (isHTML)
-        //            m.Body = ConvertBodyToHTML(m.Body);
-        //        //her implementeres alt koden til at sende via Smtp
-        //    }
-
-        //    if (type.Equals(MessageCarrier.VMessage))
-        //    {
-        //        if (isHTML)
-        //            m.Body = ConvertBodyToHTML(m.Body);
-        //        //her implementeres alt koden til at sende via VMessage
-        //    }
-        //}
+        public void SendMessageToAll(MessageCarrier type, string[] to, Message m, bool isHTML)
+        {
+            if (isHTML)
+                m.Body = ConvertBodyToHTML(m.Body);
+            //her implementeres alt koden til at sende via Smtp
+        }
     }
 }

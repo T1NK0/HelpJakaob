@@ -4,11 +4,13 @@ using System.Text;
 
 namespace HelpJakaob
 {
-    //Creates an enum called MessageCarrier, which choses which type of message we want to send. (SMTP 
+    /// <summary>
+    /// Creates an ENUM for us to use to define the message type (SMTP or VMessage)
+    /// </summary>
     public enum MessageCarrier { Smtp, VMessage }
 
     /// <summary>
-    /// Creates a message depending on the user input.
+    /// Creates a message depending on the user input. (To, From, message(body), subject and cc)
     /// </summary>
     class Message
     {
