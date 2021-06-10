@@ -12,7 +12,7 @@ namespace HelpJakaob
     /// <summary>
     /// Creates a message depending on the user input. (To, From, message(body), subject and cc)
     /// </summary>
-    class Message
+    public class Message
     {
         string to, from, body, subject, cc;
         bool isHtml;

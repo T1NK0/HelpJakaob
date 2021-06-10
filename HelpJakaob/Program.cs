@@ -19,7 +19,14 @@ namespace HelpJakaob
                 textConverter.ConvertBodyToHTML(message.Body);
             }
 
-            Console.WriteLine(message.To);
+            Console.WriteLine(
+                message.To + "\n" +
+                message.Cc + "\n" +
+                message.Subject + "\n" +
+                message.Body + "\n" +
+                message.From + "\n" +
+                message.IsHTML
+                );
 
         }
     }
