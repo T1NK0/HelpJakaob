@@ -13,6 +13,7 @@ namespace HelpJakaob
         {
             if (isHTML)
                 m.Body = ConvertBodyToHTML(m.Body);
+            else return m;
             //her implementeres alt koden til at sende via VMessage
         }
 
@@ -20,14 +21,15 @@ namespace HelpJakaob
         {
             if (isHTML)
                 m.Body = ConvertBodyToHTML(m.Body);
+            else return m;
             //her implementeres alt koden til at sende via VMessage
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="plainText"></param>
-        /// <returns></returns>
+        /// <param name="plainText">returns the </param>
+        /// <returns>Returns the text as plaintext (html)</returns>
         public override string ConvertBodyToHTML(string plainText)
         {
             return "" + plainText + "";

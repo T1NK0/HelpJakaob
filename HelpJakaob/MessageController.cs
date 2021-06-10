@@ -13,6 +13,9 @@ namespace HelpJakaob
 
         //Define Who will get message (All or one)
 
+        /// <summary>
+        /// Runs a SendMessage method, which returns the message as either SMTP or VMessage
+        /// </summary>
         public void SendMessage()
         {
             switch (Message.MessageCarrier)
